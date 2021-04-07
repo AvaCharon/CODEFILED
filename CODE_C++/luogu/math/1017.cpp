@@ -8,12 +8,21 @@ int main()
     int out[41];
     int m, sum = 0;
     scanf("%d%d", &sum, &m);
+    printf("%d=", sum);
     int j = 0;
     while (abs(sum) >= 1)
     {
-        out[j++] = sum % m - m;
-        sum /= m;
-        sum++;
+        if (sum % m < 0)
+        {
+            out[j++] = sum % m - m;
+            sum /= m;
+            sum++;
+        }
+        else
+        {
+            out[j++] = sum % m;
+            sum /= m;
+        }
     }
     for (j--; j >= 0; j--)
     {
@@ -22,5 +31,6 @@ int main()
         else
             printf("%c", out[j] - 10 + 'A');
     }
+    printf("(base%d)", m);
     return 0;
 }
