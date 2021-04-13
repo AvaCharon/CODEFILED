@@ -2,9 +2,9 @@
 using namespace std;
 
 int n, m;
-bool f[10005][10005];
-bool vis[10005];
-int ans[10005];
+bool f[100005][100005];
+bool vis[100005];
+int ans[100005];
 int cnt = 0;
 
 void dfs(int k)
