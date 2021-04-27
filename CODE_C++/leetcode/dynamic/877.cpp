@@ -4,7 +4,7 @@ public:
     bool stoneGame(vector<int> &piles)
     {
         int len = piles.size();
-        int f[len][len][2]; //f[i][j]=!f[i+1][j]||!f[i][j-1]
+        int f[len][len][2]; 
         for (int i = 0; i < len; i++)
         {
             f[i][i][0] = piles[i];
