@@ -77,7 +77,7 @@ MyGraph_2 *createMyGraph_2()
     }
     //创建邻接矩阵
     cout << "please input the edges:" << endl;
-    ;
+    
     for (i = 0; i < G->e; i++)
     {
         cin >> start >> end;
