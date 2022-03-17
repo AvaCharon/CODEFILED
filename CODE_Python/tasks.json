@@ -1,0 +1,14 @@
+{
+    "version": "0.1.0",
+    "command": "D:\\Program Files\\Python35\\python",
+    "isShellCommand": true,
+    "args": [
+        "${file}"
+    ],
+    "showOutput": "always",
+    "options": {
+        "env": {
+            "PYTHONIOENCODING": "UTF-8"
+        }
+    }
+}
