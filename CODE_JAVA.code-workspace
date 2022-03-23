@@ -4,5 +4,10 @@
 			"path": "CODE_JAVA"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.project.sourcePaths": [
+			"class",
+			"homework"
+		]
+	}
 }
