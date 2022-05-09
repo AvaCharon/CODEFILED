@@ -1,3 +1,40 @@
+# 设置/修改用户信息
+# git config --global user.name AvaCharon
+# git config --global user.name ###@###
+# 查看用户信息
+# git config --list
+# git config --global user.name 
+# git config --global user.name 
+
+'''
+git status 查看文件状态
+git add 将文件的修改添加到暂存区
+git reset 将暂存区的文件取消暂存或切换到指定版本
+git commit 将暂存区的文件修改提交到版本库
+git log 查看日志
+
+git remote 查看远程仓库
+git remote add shortname 添加远程仓库
+git clone 从远程仓库克隆
+git pull 从远程仓库拉取
+git push 推送到远程仓库
+'''
+# 查看是否连接上
+'''
+$ ssh -T git@github.com
+Hi AvaCharon! You've successfully authenticated, but GitHub does not provide shell access.
+'''
+#关于连接不上的问题
+#在.ssh文件夹中的config文件中添加以下
+'''
+Host github.com
+  User yjffffz@gmail.com //git中的邮箱
+  IgnoreUnknown UseKeychain
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile "C:\Users\fffz\.ssh\id_rsa"
+'''
+
 # 建立本地仓库
 # git init
 
