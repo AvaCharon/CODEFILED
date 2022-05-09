@@ -46,6 +46,18 @@ git config --global http.sslVerify "false"
 git config lfs.https://github.com/Harris-H/ICPC.git/info/lfs.locksverify false
 '''
 
+#Failed to connect to github.com port 443: Timed out
+'''
+在C:\Windows\System32\drivers\etc\hosts添加
+
+#Github
+140.82.113.4 github.com
+151.101.185.194 github.global.ssl.fastly.net
+
+在cmd中执行刷新dns设置命令
+ipconfig /flushdns
+'''
+
 # 建立本地仓库
 # git init
 
