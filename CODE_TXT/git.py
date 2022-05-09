@@ -8,20 +8,26 @@
 
 '''
 git status 查看文件状态
-git add 将文件的修改添加到暂存区
+git add file 将对应文件的修改添加到暂存区
+git add * 将所有文件的修改添加到暂存区
 git reset 将暂存区的文件取消暂存或切换到指定版本
 git commit 将暂存区的文件修改提交到版本库
+git commit -m"message" 将暂存区的文件修改提交到版本库并设置本次提交的备注
+git commit -a -m “massage”其他功能如-m参数，加的-a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区，注意，新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。建议一般不要使用-a参数，正常的提交还是使用git add先将要改动的文件添加到暂存区，再用git commit 提交到本地版本库。
 git log 查看日志
 
 git remote 查看远程仓库
-git remote add shortname 添加远程仓库
+git remote -v 查看远程仓库地址
+git remote add name git_url 添加远程仓库
+git remote set-url name git_url_new 修改远程仓库
+git push origin master 推送到主分支
 git clone 从远程仓库克隆
 git pull 从远程仓库拉取
 git push 推送到远程仓库
 '''
 # 查看是否连接上
 '''
-$ ssh -T git@github.com
+ssh -T git@github.com
 Hi AvaCharon! You've successfully authenticated, but GitHub does not provide shell access.
 '''
 #关于连接不上的问题
@@ -57,6 +63,9 @@ git config lfs.https://github.com/Harris-H/ICPC.git/info/lfs.locksverify false
 在cmd中执行刷新dns设置命令
 ipconfig /flushdns
 '''
+
+
+
 
 # 建立本地仓库
 # git init
