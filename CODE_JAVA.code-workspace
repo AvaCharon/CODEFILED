@@ -6,8 +6,6 @@
 	],
 	"settings": {
 		"java.project.sourcePaths": [
-			"class",
-			"homework"
 		]
 	}
 }

@@ -1,0 +1,10 @@
+{
+    "code-runner.executorMap": {
+        "java": "cd $dir && javac -encoding utf-8 $fileName && java -Dfile.encoding=UTF-8 $fileNameWithoutExt",
+        
+    },
+    "java.project.referencedLibraries": [
+        "F:\\bc\\VC\\CODEFILED\\CODE_JAVA\\**\\*.jar"
+    ]
+
+}

@@ -1,0 +1,211 @@
+\documentclass[10pt,CCT]{ctexart}
+\textheight=23cm \textwidth=16cm \oddsidemargin .5cm \topmargin
+-2cm
+
+\usepackage{amsmath}
+
+\setlength{\parindent}{2\ccwd}          %段落首行缩进量 \ccwd表示一个汉定的宽度
+\setlength{\parskip}{2pt plus1pt minus1pt}  %段落之间的竖直距离
+\setlength{\baselineskip}{20pt plus2pt minus1pt}%段落内的行距
+\setlength{\textheight}{22true cm}      %每页上的文本总高度
+\setlength{\textwidth}{15true cm}     %每页上的文本总宽度
+
+\newcommand{\beq}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{eqnarray}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bq}{\begin{eqnarray*}}
+\newcommand{\eq}{\end{eqnarray*}}
+
+\newcommand{\D}{\scriptscriptstyle}
+\newtheorem{lemma}{{\heiti 引理}}
+\newtheorem{theorem}{{\heiti 定理}}
+\newtheorem {definition}{{\heiti 定义}}
+\newtheorem{corollary}{{\heiti 推论}}
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
+\renewcommand{\thecorollary}{\thesection.\arabic{corollary}}
+\renewcommand{\thedefinition}{\thesection.\arabic{definition}}
+\renewcommand{\thelemma}{\thesection.\arabic{lemma}}
+
+%生成标题，即使上面几条标题命令的定义生效
+
+\begin{document}%
+
+\title{
+{\heiti《数理逻辑》第 {$1$} 次作业
+}
+}
+\date{\today}
+
+\author{
+姓名：\underline{杨骏飞}~~~~~~
+学号：\underline{200111427}~~~~~~}
+
+
+\maketitle
+
+\noindent
+{\bf 题目1：} 将下列语句形式化为命题公式
+\begin{enumerate}
+\item[(1)] 2既是素数又是偶数。
+\item[(2)] 一个整数是奇数当且仅当它不能被2整除。
+\item[(3)] 大学里的学生不是本科生就是研究生。
+\item[(4)] 你的车速超过每小时100公里足以接到超速罚单。
+\end{enumerate}
+
+\vspace{5pt}
+\noindent
+{\bf 答：}
+\begin{enumerate}
+    \item [(1)] 设$p$：2是素数，$q$:2是偶数；\\化为命题公式：$p \wedge q$ 。
+    \item [(2)] 设$p$：一个整数是奇数，$q$：它不能被2整除；\\化为命题公式：$p \leftrightarrow q$ 。
+    \item [(3)] 设$p$：大学里的学生是本科生，$q$：这个学生是研究生；\\化为命题公式： $\neg p \leftrightarrow q$ 。
+    \item [(4)] 设$p$:你的车速超过每小时100公里，$q$：接到超速罚单；\\化为命题公式： $p \rightarrow q$ 。
+\end{enumerate}
+
+\vspace{10pt}
+\noindent
+{\bf 题目2：}判断下列逻辑蕴含和逻辑等价是否成立
+\begin{enumerate}
+\item[(1)] $A\Rightarrow B\rightarrow A$
+\item[(3)] $A \rightarrow (B \rightarrow C) \Rightarrow (A\rightarrow B) \rightarrow (A \rightarrow C)$
+\item[(5)] $(A \vee B) \rightarrow C \Leftrightarrow (A \rightarrow C) \wedge (B\rightarrow C)$
+\end{enumerate}
+
+\vspace{5pt}
+\noindent
+{\bf 答：}
+\begin{enumerate}
+    \item [(1)] 成立，证明如下\\当$A^{v}=1$时，$(B \rightarrow A)^{v}=1-B^{v}+B^{v}A^{v}=1-B^{v}+B^{v}=1$
+    \item [(3)] 成立，证明如下
+    \begin{equation}
+        \begin{aligned}
+            (A \rightarrow (B \rightarrow C))^{v}&=1-A^{v}+A^{v}(B \rightarrow C)^{v}\\
+            &=1-A^{v}+A^{v}(1-B^{v}+B^{v}C^{v})=1
+        \end{aligned}\notag
+    \end{equation}
+    即$$A^{v}B^{v}(1-C^{v})=0$$
+    所以$$A^{v}=0\mbox{或}B^{v}=0\mbox{或}C^{v}=1$$
+    当$A^{v}=0$时，$(A \rightarrow B)^{v}=1$,$(A \rightarrow C)^{v}=1$,故$((A\rightarrow B) \rightarrow (A \rightarrow C))^{v}=1$\\
+    当$B^{v}=0$且$A^{v}=1$时，$(A \rightarrow B)^{v}=1-A^{v}=0$,故$((A\rightarrow B) \rightarrow (A \rightarrow C))^{v}=1$\\
+    当$C^{v}=1$时，$(A \rightarrow C)^{v}=1$,故$((A\rightarrow B) \rightarrow (A \rightarrow C))^{v}=1$\\
+    综上所述，命题成立
+    \item [(5)] 成立，证明如下
+    \begin{equation}
+        \begin{aligned}
+            Left &= ((A \vee B) \rightarrow C)^{v}=1-(A \vee B)^{v}+(A \vee B)^{v}C^{v}\\
+            &= 1-A^{v}-B^{v}+A^{v}B^{v}+A^{v}C^{v}+B^{v}C^{v}-A^{v}B^{v}C^{v}\\
+            Right &= (1-A^{v}+A^{v}C^{v}) \vee (1-B^{v}+B^{v}C^{v})\\
+            &= 1-B^{v}+B^{v}C^{v}-A^{v}+A^{v}B^{v}-A^{v}B^{v}C^{v}+A^{v}C^{v}
+        \end{aligned}\notag
+    \end{equation}
+    所以命题得证
+\end{enumerate}
+\noindent
+
+
+\vspace{10pt}
+\noindent
+{\bf 题目3：}求下列公式的合取范式和析取范式
+\begin{enumerate}
+    \item[(1)] $\neg(q\rightarrow p) \wedge (r \rightarrow \neg s)$
+    \item[(3)] $\neg(p\vee q) \leftrightarrow (p \wedge q)$
+\end{enumerate}
+
+
+\vspace{5pt}
+\noindent
+{\bf 答：}
+\begin{enumerate}
+    \item[(1)] 合取范式：
+    \begin{align*}
+        \neg(q\rightarrow p) \wedge (r \rightarrow \neg s) &\Leftrightarrow \neg(\neg q\vee p) \wedge (\neg r\vee \neg s)\\
+        &\Leftrightarrow q \wedge \neg p \wedge (\neg r \vee \neg s)
+    \end{align*}析取范式：
+    \begin{align*}
+        \neg(q\rightarrow p) \wedge (r \rightarrow \neg s) &\Leftrightarrow \neg(\neg q\vee p) \wedge (\neg r\vee \neg s)\\
+        &\Leftrightarrow (q \wedge \neg p) \wedge (\neg r \vee \neg s)\\
+        &\Leftrightarrow (q \wedge \neg p \wedge \neg r) \vee (q \wedge \neg p \wedge \neg s)
+    \end{align*}
+    \item[(3)] 合取范式：
+    \begin{align*}
+        \neg(p\vee q) \leftrightarrow (p \wedge q) &\Leftrightarrow (\neg(p\vee q) \rightarrow (p \wedge q)) \wedge((p \wedge q) \rightarrow \neg(p\vee q))\\
+        &\Leftrightarrow ((p\vee q) \vee (p \wedge q)) \wedge (\neg(p \wedge q) \vee \neg(p\vee q))\\
+        &\Leftrightarrow (p\vee q)\wedge (\neg p\vee \neg q)
+    \end{align*}析取范式：
+    \begin{align*}
+        \neg(p\vee q) \leftrightarrow (p \wedge q) &\Leftrightarrow (\neg(p\vee q) \rightarrow (p \wedge q)) \wedge((p \wedge q) \rightarrow \neg(p\vee q))\\
+        &\Leftrightarrow ((p\vee q) \vee (p \wedge q)) \wedge (\neg(p \wedge q) \vee \neg(p\vee q))\\
+        &\Leftrightarrow (p\vee q)\wedge \neg(p\wedge q)\\
+        &\Leftrightarrow (p\wedge \neg q)\vee (q\wedge \neg p)
+    \end{align*}
+    \end{enumerate}
+\noindent
+
+\vspace{10pt}
+\noindent
+{\bf 题目4：}求下列公式的主合取范式和主析取范式
+\begin{enumerate}
+\item[(1)] $p\rightarrow p \wedge q$
+\item[(3)] $(p\rightarrow p\wedge q)\vee r$
+\end{enumerate}
+
+\vspace{5pt}
+\noindent
+{\bf 答：}
+\begin{enumerate}
+\item[(1)] 主合取范式：
+\begin{align*}
+    p\rightarrow p \wedge q &\Leftrightarrow \neg p \vee(p \wedge q)\\
+    &\Leftrightarrow \neg p\vee q
+\end{align*}主析取范式：
+\begin{align*}
+    p\rightarrow p \wedge q &\Leftrightarrow \neg p \vee(p \wedge q)\\
+    &\Leftrightarrow (\neg p\wedge(q\vee \neg q))\vee(p\wedge q)\\
+    &\Leftrightarrow (\neg p\wedge q)\vee(\neg p\wedge \neg q)\vee(p\wedge q)
+\end{align*}
+\item[(3)] 主合取范式：
+\begin{align*}
+    (p\rightarrow p\wedge q)\vee r &\Leftrightarrow (\neg p \vee (p\wedge q))\vee r\\
+    &\Leftrightarrow \neg p\vee q \vee r
+\end{align*}主析取范式：
+\begin{align*}
+    &(p\rightarrow p\wedge q)\vee r\\
+    \Leftrightarrow &\neg p \vee (p\wedge q)\vee r\\
+    \Leftrightarrow &(\neg p\wedge(\neg q\vee q)\wedge(\neg r\vee r))\vee ((p\wedge q)\wedge(\neg r\vee r)) \vee (r\wedge(\neg q\vee q)\wedge(\neg p\vee p))\\
+    \Leftrightarrow &(\neg p\wedge q\wedge r)\vee(\neg p\wedge q\wedge \neg r)\vee(\neg p\wedge \neg q\wedge r)\vee(\neg p\wedge \neg q\wedge \neg r)\vee(p\wedge q\wedge r)\vee(p\wedge q\wedge \neg r)\vee(p\wedge \neg q\wedge r)
+\end{align*}
+\end{enumerate}
+\noindent
+
+\vspace{10pt}
+\noindent
+{\bf 题目5：}用$\{\neg, \rightarrow\}$表示下列公式
+\begin{enumerate}
+\item[(1)] $p\vee (p\wedge q) \leftrightarrow p$
+\item[(3)] $((p\wedge q)\wedge r) \leftrightarrow (p \wedge (q\wedge r))$
+\item[(5)] $(p\vee (q \wedge r)) \leftrightarrow (p \vee q) \wedge (p \vee r)$
+\end{enumerate}
+
+\vspace{5pt}
+\noindent
+{\bf 答：}
+\noindent
+
+
+\vspace{10pt}
+\noindent
+{\bf 题目6：}用$\{\uparrow, \downarrow\}$表示下列公式
+\begin{enumerate}
+\item[(1)] $\neg p \vee q$
+\item[(3)] $\neg p \vee \neg q$
+\end{enumerate}
+
+\vspace{5pt}
+\noindent
+{\bf 答：}
+\noindent
+
+\end{document}

@@ -1,11 +1,14 @@
 from sympy import *
+
+PI = 3.1415
+
 x = symbols('x')
-x0 = 0.5
+x0 = PI/4
 x_list = [x0]
 i = 0
 
 def f(x):
-    f = x * exp(x) - 1
+    f = cos(x)-x
     return f
 
 while True:   
@@ -24,3 +27,7 @@ while True:
     else:
         pass
 print(f'所求方程式的根为{x_list[-1]}')
+
+
+#cos(x)-x
+#

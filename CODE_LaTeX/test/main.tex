@@ -1,0 +1,126 @@
+\documentclass{article}
+
+\usepackage{lmodern}%加了这一句之后，表格1，图片1后面的标识就出来了
+\usepackage[UTF8]{ctex}%ctex宏集中的宏包和文档默认使用UTF8编码
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}%使用的纸张类型，页边距的geometry宏包
+\usepackage{amsmath}  %数学公式宏包
+\usepackage{graphicx} %插入图片宏包
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}%超链接宏包
+
+\title{演示}
+\author{我的名字}  %姓名
+\date{2021 08} %日期
+
+\begin{document}
+
+\maketitle     %显示标题等信息
+
+\begin{abstract}
+    这里是中文摘要的具体内容
+\end{abstract}   %中文摘要，中文摘要
+    
+
+\section{介绍}
+你的介绍在这里只需开始编写文档并使用重新编译按钮即可查看更新的 PDF 预览。下面列出了常用命令和功能的示例，以帮助您入门。
+
+%各行是换行
+熟悉编辑器后，您可以在Overleaf菜单中找到各种项目设置，通过编辑器左上角的按钮访问。要查看教程、用户指南和更多文档，请访问我们的\href{https://www.overleaf.com/learn}{学习网站}%用到超链接宏包格式
+，或前往我们的计划页面\href{https://www.overleaf.com/user/subscription/plans}{计划页}
+\section{一些入门实例}
+\subsection{如何创一级标题和二级标题}%二级标题
+只需使用 section 和 subsection 命令，如本示例文档中所示！使用 Overleaf，所有格式和编号都会根据您选择的模板自动处理。如果您使用富文本模式，您还可以通过编辑器中的按钮创建新的部分和子部分。
+\subsection{如何添加图片}
+首先，您必须使用文件树菜单中的上传链接从您的计算机上传图像文件。然后使用 includegraphics 命令将其包含在您的文档中。使用 figure 环境和 caption 命令为图形添加数字和标题。有关示例，请参阅本节中图\ref{fig:rabbit} 的代码。
+%\ref和\label是成对出现的。后者是标记（排序）图表等，前者是应用标记的序号，两者指的图像要一致
+
+请注意，考虑到周围的文本并考虑到可能靠近的其他图形或表格，您的图形将自动放置在最合适的位置。您可以在此帮助文章中找到有关将图像添加到文档的更多信息 \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{包含在overleaf上的图片}
+%插入图片1
+\begin{figure}
+\centering
+\includegraphics[width=0.2\textwidth]{图片1.jpg}
+\caption{\label{fig:rabbit}这只是通过文件上传的兔子}%图片排序以及图片标题命名
+\end{figure}
+%插入图片1
+
+\subsection{如何添加表格}
+对基本表格使用表格和表格环境---见表格~\ref{tab:widgets}，例如。有关更多信息，请参阅此帮助文章 \href{https://www.overleaf.com/learn/latex/tables}{表格}。
+
+%自制表格
+\begin{table}
+\centering
+\begin{tabular}{l|r}%表格的第一列左对齐，第二列右对齐
+名称 & 质量 \\\hline % &为竖线，\hline为下划横线，\\为换行
+装置1 & 42 \\
+装置2 & 13 
+\end{tabular}
+\caption{\label{tab:widgets}一个表格的例子}
+\end{table}
+%自制表格
+
+\subsection{如何添加评论和跟踪}
+
+通过突出显示某些文本并单击编辑器窗格右上角的“添加注释”，可以将注释添加到您的项目中。要查看现有评论，请单击上方工具栏中的“评论”菜单。要回复评论，请单击评论右下角的回复按钮。暂时完成审阅后，您可以通过单击工具栏上的名称来关闭“审阅”窗格。
+
+跟踪更改可用于我们所有的\href{https://www.overleaf.com/user/subscription/plans}{优质项目}，并且可以使用“审阅”窗格顶部的选项打开或关闭。跟踪更改允许您跟踪对文档所做的每项更改以及进行更改的人员。
+
+\subsection{如何添加列表}
+
+可以使用自动编号\dots
+
+\begin{enumerate}%数字序号
+\item 这样,
+\item 或者这样.
+\end{enumerate}
+\dots 或者使用点 \dots
+\begin{itemize} %点列表
+\item 这样,
+\item 或者这样.
+\end{itemize}
+
+\subsection{如何使用数学公式}
+
+\LaTeX{} 用于数学排版。
+使 $X_1, X_2,\ldots,X_n$是一个具有独立同分布的随机变量序列 $\text{E}[X_i] = \mu$ and  $\text{Var}[X_i] = \sigma^2 < \infty$，同时使得
+\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
+      = \frac{1}{n}\sum_{i}^{n} X_i\]
+表示它们的平均值。 然后使得 $n$ 接近无穷大，随机变量 $\sqrt{n}(S_n - \mu)$ 分布收敛到正态 $\mathcal{N}(0, \sigma^2)$.
+
+\subsection{如何更改页边距和纸张类型}
+
+通常，您使用的模板会为该用例正确设置页边距和纸张大小。例如，如果您使用期刊出版商提供的期刊文章模板，该模板将根据他们的要求进行格式化。在这些情况下，最好不要直接更改边距。
+
+但是，如果您使用的是更通用的模板，例如这个模板，并且想要更改边距，那么一种常见的方法是通过几何包。您可以在此示例文件顶部的序言中找到加载的几何包，如果您想了解有关如何调整设置的更多信息，请访问此帮助文章 \href{https://www.overleaf.com/learn/latex/page_size_and_margins}{页边距和纸张类型}。
+
+\subsection{如何更改文档语言和拼写检查设置}
+
+Overleaf 支持多种不同的语言，包括一个文档中的多种不同语言。
+
+要配置文档语言，只需编辑此示例项目顶部序言中提供给 babel 包的选项。要了解有关不同选项的更多信息，请访问此帮助文章 \href{https://www.overleaf.com/learn/latex/International_language_support}{国际语言支持}.
+
+要更改拼写检查语言，只需打开编辑器窗口左上角的 Overleaf 菜单，向下滚动到拼写检查设置，然后进行相应调整。
+
+\subsection{如何添加引文和参考文献列表}
+
+你可以简单地上传一个 \verb|.bib| 包含您的 BibTeX 条目的文件，使用 JabRef 等工具创建。然后，您可以从中引用条目，如下所示：\cite{01}。 只需记住指定参考书目样式以及文件名 \verb|.bib|。你可以使用 \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{在此视频教程} 学习更多关于 BibTeX的内容。
+
+如果你用 \href{https://www.overleaf.com/user/subscription/plans}{升级账户}, 您也可以直接导入您的 Mendeley 或 Zotero 库作为 \verb|.bib| 文件，通过文件树中的上传菜单。
+%\verb用来显示输入的内容
+
+\subsection{祝你好运}
+
+我们希望您发现 Overleaf 有用，并请查看我们的 \href{https://www.overleaf.com/learn}{帮助文档} 获取更多教程和用户指南！如果您有任何反馈，请使用 Overleaf 菜单底部的“联系我们”链接告诉我们---或使用联系表格\url{https://www.overleaf.com/contact}。%\url后面可以显示具体网址；而\href后面是网址对应的名称
+
+\bibliographystyle{alpha}
+%LaTeX 参考文献标准选项及其样式共有以下8种：
+%plain，按字母的顺序排列，比较次序为作者、年度和标题.
+%unsrt，样式同plain，只是按照引用的先后排序.
+%alpha，用作者名首字母+年份后两位作标号，以字母顺序排序.
+%abbrv，类似plain，将月份全拼改为缩写，更显紧凑.
+%ieeetr，国际电气电子工程师协会期刊样式.
+%acm，美国计算机学会期刊样式.
+%siam，美国工业和应用数学学会期刊样式.
+%apalike，美国心理学学会期刊样式.
+%所以这里采用的是作者字母+年份的后两位
+\bibliography{ref}
+%参考的文献格式为样本中的
+\end{document}

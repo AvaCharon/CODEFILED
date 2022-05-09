@@ -1,0 +1,36 @@
+//居中问题
+
+数学公式居中：可以在公式前后各加两个$$，就可以了
+
+一行对齐：左对齐\leftline{内容} 居中\centerline{内容} 右对齐\rightline{内容}
+数学公式居中：可以在公式前后各加两个$$，就可以了
+一行对齐：左对齐\leftline{内容} 居中\centerline{内容} 右对齐\rightline{内容}
+多行或者段落对齐：
+左对齐 \begin{flushleft}...\end{flushleft}
+居中 \begin{center}...\end{center}
+右对齐 \begin{flushright}...\end{flushright}
+
+//编号问题
+无编号的行内公式：直接在公式两边加入$$即可
+有编号的行内公式：使用equation环境，注意此时公式两边不需要再另加$$，注意此时在equation环境中\换行符号是无效的
+例如:要想生成如下公式采用的代码为
+\begin{equation}\label{eq1}
+\boldsymbol{x}{k}=\boldsymbol{F}{k-1} \boldsymbol{x}{k-1}+\boldsymbol{w}{k-1}
+\end{equation}
+3.单个公式很长，需要换行，但仅允许生成一个编号时，可以用命令align,在适当位置进行换行对齐
+例如：
+\begin{align}\label{eq5}
+V(t,p_{i}(t),q_{i}(t))&=\frac{1}{2}\sum_{i=1}{N}m_{i}q_{i}{\top}(t)q_{i}(t)+\frac{1}{2}\sum_{i=1}^{N}\sum_{j \in \mathcal{N}{i}}\sum{l=1}^{n}c_{ij}\notag\
+&\quad \times\int^{p_{jl}(t)-p_{il}(t)}{0}h{l}(s),{\rm d}s
+\end{align}
+当我们需要知识将一个常公式给拆开，只有一个编号且这个编号放在中间，我们一般用split命令，split命令必须嵌套在equation,或者其他数学环境中使用
+&\quad 这个命令表示在对齐后分开一段间距。
+
+4.多行公式并列后面一对一编号
+例如
+\begin{align}\label{eq2}
+u_{i1}(t)&=-b_{i}(t),f(q_{i}),\
+u_{i2}(t)&=\sum_{j\in \mathcal{N}{i}}c{ij}h(p_{j}(t)-p_{i}(t)),\quad i\in\bar{N}
+\end{align}
+*如果只想在最后一行公式中显示编号，在双斜杠前加入\notag 无标记命令，同时begin{align}的环境生成的公式后面不带编号
+多行公式中想从哪开始对齐，就在哪个前面加入&符号
