@@ -35,6 +35,17 @@ Host github.com
   IdentityFile "C:\Users\fffz\.ssh\id_rsa"
 '''
 
+# OpenSSL SSL_read: Connection was reset, errno 10054
+'''
+文件过大导致的。
+需要修改postBuffer，貌似这玩意叫后置缓存
+git config http.postBuffer 524288000
+
+问题应该是与http 的ssl认证有关。
+git config --global http.sslVerify "false"
+git config lfs.https://github.com/Harris-H/ICPC.git/info/lfs.locksverify false
+'''
+
 # 建立本地仓库
 # git init
 
